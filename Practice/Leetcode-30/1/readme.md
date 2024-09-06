@@ -25,7 +25,7 @@ Explanation: 5 !== null so this expression returns true.
 
 ## Approach
 The problem requires the expect function to support making toBe and notToBe calls (e.g., expect(5).toBe(5); should return true, and expect(5).notToBe(5); should throw "Equal"). To do so, we should define the return of the expect function based on what kind of call we make. This can be done in the following format:
-```console
+```js
 return {
     toBe: (parameters) => {
         [doing some stuff]
@@ -37,7 +37,7 @@ return {
 ```
 The below solution follows this format, where toBe and notToBe both has an if else statement, such that if the throw condition is true, throw an error. Otherwise, return true.
 
-```console
+```js
 Code
 var expect = function(val) {
     return {
